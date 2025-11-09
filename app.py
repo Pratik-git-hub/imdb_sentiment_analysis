@@ -6,7 +6,7 @@ from tensorflow.keras.datasets import imdb
 import streamlit as st
 
 #load model
-model = load_model('IMDB_RNN/simple_rnn_imdb.h5')
+model = load_model('simple_rnn_imdb.h5')
 
 # Load the IMDB dataset word index
 word_index = imdb.get_word_index()
@@ -37,4 +37,5 @@ example_review = st.text_area("Enter review")
 if st.button("Classify"):
     sentiment , prediction = predict_sentiment(example_review)
     st.write("Sentiment for the review is: {}".format(sentiment))
+
     st.write("Prediction: {}".format(prediction))
